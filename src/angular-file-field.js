@@ -7,7 +7,7 @@
  * License: MIT
  */
 
-angular.module('angular.fileField',[])
+angular.module('fileField',[])
     .directive('fileField', [function() {
         return {
             require:'ngModel',
@@ -16,9 +16,10 @@ angular.module('angular.fileField',[])
             scope: {
                 ngModel: '=',
                 preview: '=',
-                ngChange: '&'
+                ngChange: '&',
+                name: '@'
             },
-            template: '<div ng-transclude></div><input id="fileField" type="file" multiple style="display:none">',
+            template: '<div ng-transclude></div><input id="fileField" name="{{name}}" type="file" multiple style="display:none">',
             link: function (scope, element, attrs, ngModel) {
 
                 var fileField = angular.element(document.querySelector('#fileField'));
