@@ -5,9 +5,9 @@ A pure angular (no jquery) file field that functions like the native file input 
 
 Adds support for `ng-model` and image preview.
 
-Fork of [itslenny/angular-bootstrap-file-field](https://github.com/itslenny/angular-bootstrap-file-field). In this fork added support of multiple upload and remove addiction on bootstrap(May used for material design).
+Fork of [itslenny/angular-bootstrap-file-field](https://github.com/itslenny/angular-bootstrap-file-field). In this fork added support of multiple upload and remove addiction on bootstrap(may used for material design).
 
-Actions speak louder than words: [Check out THE DEMO](http://itslenny.github.io/angular-bootstrap-file-field/).
+Actions speak louder than words: [Check out THE DEMO](https://jonybang.github.io/angular-file-field/).
 
 ##Installation
 
