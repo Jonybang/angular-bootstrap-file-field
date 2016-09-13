@@ -63,6 +63,6 @@ This directive can transclude any html, not only bootstrap button.
 
 ##Send to server
 
-For send to server recomended to use [ng-file-upload](https://github.com/danialfarid/ng-file-upload) by @danialfarid solution.
+For send to server recomended to use [danialfarid/ng-file-upload](https://github.com/danialfarid/ng-file-upload) solution.
 
 
