@@ -11,37 +11,38 @@ Actions speak louder than words: [Check out THE DEMO](http://itslenny.github.io/
 
 Dependencies: Angular
 
-Download and include angular-bootstrap-file-field.min.js
+Download and include angular-file-field.min.js
 
-Create an angular app and inject `bootstrap.fileField`. That's about it.
-
-**bower**
-```bash
-bower install angular-bootstrap-file-field
-```
+Create an angular app and inject `fileField`. That's about it.
 
 ##Usage
 
 **Minimal**
 
 ```html
-<file-field ng-model="uploadFile">Add File</file-field>
+<file-field ng-model="addedFiles" preview="previews" ng-change="filesAdded()" name="my_files[]">
+	<button class="btn btn-default">Add file(s)</button>
+</file-field>
 ```
 
 **Show file name**
 
 ```html
-<file-field ng-model="uploadFile">Add File</file-field>
+<file-field ng-model="addedFiles" preview="previews" ng-change="filesAdded()" name="my_files[]">
+	<button class="btn btn-default">Add file(s)</button>
+</file-field>
 
-{{uploadFile.name}}
+{{addedFiles[0].name}}
 ```
 
 **Show image preview**
 
 ```html
-<file-field ng-model="uploadFile" preview="previewImage">Select File</file-field>
+<file-field ng-model="addedFiles" preview="previews" ng-change="filesAdded()" name="my_files[]">
+	<button class="btn btn-default">Add file(s)</button>
+</file-field>
 
-<img ng-src="{{previewImage}}">
+<img ng-src="{{previews[0]}}">
 ```
 
 
@@ -53,33 +54,15 @@ bower install angular-bootstrap-file-field
 |---|---|---|
 | ng-model | scope variable | Behaves like ng-model on any other form element. Just binds to the $scope value in the controller. |
 | preview | scope variable | Optional. If provided a base64 encoded image url will be provided. (this can be used in the ng-src or an img tag to display a preview |
+| name | string | Optional. Set as name attribute to file input |
 
 
 ##Styling
 
-This directive creates a `<button>` tag and gives it the class bootstrap class "btn" if no class or ng-class is specified.
+This directive can transclude any html, not only bootstrap button.
 
-####Example styling
+##Send to server
 
-**bootstrap primary button**
-
-```html
-<file-field class="btn btn-primary" ng-model="foo"></file-field>
-```
-
-**custom classes**
-
-```html
-<file-field class="myCustomClass" ng-model="foo"></file-field>
-```
-
-**dynamic class**
-
-file-field also has full support for ng-class which can be used in conjunstion with the model attribute to make the button change classes (colors) once you select a file.
+For send to server recomended to use [ng-file-upload](https://github.com/danialfarid/ng-file-upload) by @danialfarid solution.
 
 
-```html
-
-<file-field class="btn" ng-class="{'btn-success':foo}"  ng-model="foo"></file-field>
-
-```
